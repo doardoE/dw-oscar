@@ -124,6 +124,38 @@
         color: var(--gold);
     }
 
+    /* ---------- Meta e objetivos ---------- */
+    .goals { position: absolute; inset: 0; padding: 82px 110px; }
+    .goals header { padding-bottom: 22px; border-bottom: 1px solid #3a2f2a; }
+    .goals header h2 { font-size: 60px; }
+    .goals .goal-card { margin-top: 34px; padding: 30px 36px; border-left: 4px solid var(--gold); background: rgba(255,255,255,.035); }
+    .goals .eyebrow { color: var(--gold); font-size: 20px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .goals .goal-card h3 { margin: 10px 0 14px; font-family: var(--serif); font-size: 38px; font-weight: 600; }
+    .goals .goal-card p { max-width: 1280px; font-size: 26px; line-height: 1.42; }
+    .goals .goal-card p + p { margin-top: 14px; color: var(--muted); font-size: 22px; }
+    .goals .formula { display: inline-block; margin-top: 16px; color: var(--gold); font-size: 25px; font-weight: 600; }
+    .goals .objective-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 34px; }
+    .goals .objective { min-height: 400px; padding: 30px 32px; border-top: 3px solid var(--wine); background: rgba(255,255,255,.035); }
+    .goals .objective .eyebrow { font-size: 18px; }
+    .goals .objective h3 { margin: 14px 0 18px; font-family: var(--serif); font-size: 35px; line-height: 1.12; }
+    .goals .objective p { font-size: 23px; line-height: 1.45; }
+    .goals .objective p + p { margin-top: 20px; color: var(--muted); }
+    .model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+    .model-card { min-height: 340px; padding: 22px 24px; border-top: 3px solid var(--wine); background: rgba(255,255,255,.035); }
+    .model-card h3 { margin: 0 0 12px; color: var(--gold); font-family: var(--serif); font-size: 30px; }
+    .model-card p { font-size: 18px; line-height: 1.35; }
+    .model-card p + p { margin-top: 10px; color: var(--muted); }
+    .model-card .equation { display: block; margin-top: 9px; padding: 9px 11px; color: var(--ink); background: rgba(217,173,84,.09); border-radius: 6px; font-size: 17px; line-height: 1.4; overflow-wrap: anywhere; }
+    .model-step { display: block; margin-bottom: 8px; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .weight-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+    .weight-list span { padding: 6px 9px; border: 1px solid #514334; border-radius: 6px; color: var(--ink); font-size: 15px; }
+    .weight-list .positive { border-color: #658d72; }
+    .weight-list .negative { border-color: var(--wine); }
+    .model-result { display: grid; grid-template-columns: 1fr 1.2fr 1fr; align-items: center; gap: 18px; margin-top: 18px; padding: 14px 22px; border-left: 4px solid var(--gold); background: rgba(255,255,255,.035); font-size: 18px; line-height: 1.3; }
+    .model-result strong { display: block; color: var(--gold); font-family: var(--serif); font-size: 34px; }
+    .model-result .compare { text-align: center; }
+    .model-result .validation { color: var(--muted); }
+
     /* ---------- Power BI ---------- */
     .bi { position: absolute; inset: 0; padding: 110px 110px; display: grid; grid-template-columns: 430px 1fr; column-gap: 100px; }
     .bi .body { align-self: center; }
@@ -239,6 +271,87 @@
 </section>
 
 <!-- Slide: Perguntas de negócio -->
+<section class="slide" id="meta-smart">
+    <div class="stage">
+        <div class="goals">
+            <header><h2>Meta SMART</h2></header>
+            <div class="goal-card">
+                <p class="eyebrow">TAA · Taxa de Acerto na Antecipação</p>
+                <h3>Antecipar melhor o vencedor de Melhor Filme</h3>
+                <p>Aumentar a taxa de acerto em pelo menos <b>10 pontos percentuais (p.p.)</b>.</p>
+                <p><b>Linha de base:</b> aplicar a regra do maior número de indicações por filme às cerimônias de 1950 a 2020 e calcular em quantas o filme escolhido venceu.</p>
+                <span class="formula">TAA da base = (cerimônias previstas corretamente ÷ total de cerimônias analisadas) × 100</span>
+                <p><b>Meta:</b> TAA da base + 10 p.p.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide" id="objetivos-complementares">
+    <div class="stage">
+        <div class="goals">
+            <header><h2>Objetivos complementares</h2></header>
+            <div class="objective-grid">
+                <article class="objective">
+                    <p class="eyebrow">PGND · Percentual de Gêneros Não Dramáticos</p>
+                    <h3>Como os gêneros dos vencedores mudaram?</h3>
+                    <p>Medir, por década, a participação de filmes de gêneros não dramáticos entre os vencedores de Melhor Filme, de 1950 a 2024.</p>
+                    <p>Também comparar a década com menor participação àquela com maior participação.</p>
+                </article>
+                <article class="objective">
+                    <p class="eyebrow">PVNB · Percentual de Vencedores Não Brancos</p>
+                    <h3>Quem venceu atuação e direção?</h3>
+                    <p>Medir a participação de vencedores não brancos em Melhor Ator, Melhor Atriz e Melhor Direção, entre 1950 e 2014.</p>
+                    <p>Assim, o projeto acompanha a representatividade étnico-racial nessas categorias.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide" id="modelo-logistico">
+    <div class="stage">
+        <div class="goals">
+            <header><h2>Como o modelo prevê o vencedor</h2></header>
+            <div class="model-grid">
+                <article class="model-card">
+                    <span class="model-step">Etapa 1 · Aprender</span>
+                    <h3>Dos dados aos pesos</h3>
+                    <p>Filmes indicados (1950–2020), cada um marcado como <b>ganhou (1)</b> ou <b>não ganhou (0)</b>. A regressão logística aprende quanto cada sinal contribui.</p>
+                    <div class="weight-list">
+                        <span class="positive">Montagem +1,03</span><span class="positive">DGA +0,94</span>
+                        <span class="positive">Precursores +0,88</span><span class="negative">BAFTA −0,78</span>
+                    </div>
+                    <p>Começa com pesos zerados e ajusta para reduzir o erro entre previsões e resultados (máxima verossimilhança).</p>
+                    <span class="equation">Erro logístico = −Σ [y·log(p) + (1−y)·log(1−p)]</span>
+                </article>
+                <article class="model-card">
+                    <span class="model-step">Etapa 2 · Calcular</span>
+                    <h3>De sinais a chances</h3>
+                    <p>Para cada indicado, somamos os pesos dos sinais presentes e obtemos uma pontuação:</p>
+                    <span class="equation">z = b₀ + b₁·x₁ + b₂·x₂ + ... + bₙ·xₙ</span>
+                    <p>A função sigmoide transforma a pontuação em probabilidade:</p>
+                    <span class="equation">p = 1 / (1 + e<sup>−z</sup>) &nbsp;·&nbsp; z: −2 → 12%, 0 → 50%, +2 → 88%</span>
+                    <p>Os valores acima ilustram a função; não são probabilidades de filmes reais.</p>
+                </article>
+                <article class="model-card">
+                    <span class="model-step">Etapa 3 · Prever</span>
+                    <h3>Escolher o maior p</h3>
+                    <p>O modelo compara as probabilidades dos indicados em cada cerimônia.</p>
+                    <span class="equation">Maior probabilidade = filme previsto vencedor</span>
+                    <p>Para medir o desempenho, repetimos o processo 71 vezes: treinamos com 70 cerimônias e testamos na que ficou de fora.</p>
+                    <p>Assim, o modelo não vê o ano que está tentando prever.</p>
+                </article>
+            </div>
+            <div class="model-result">
+                <div>Linha de base<strong>51,6%</strong><span>36,67 pontos / 71 cerimônias, com empates fracionados</span></div>
+                <div class="compare">Comparação<strong>+20,2 p.p.</strong><span>Meta: +10 p.p.</span></div>
+                <div>Modelo<strong>71,8%</strong><span>51 acertos / 71 cerimônias</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="slide" id="perguntas">
     <div class="stage">
         <div class="qs">
@@ -320,7 +433,7 @@
 <script>
     // Ordem de exibição. Para mover o dashboard, troque a posição de 'dashboard'.
     // Ex.: tudo antes do BI -> [..., 'agradecimentos', 'dashboard']
-    const ORDER = ['capa', 'contexto', 'bi', 'perguntas', 'dashboard', 'agradecimentos'];
+    const ORDER = ['capa', 'contexto', 'bi', 'meta-smart', 'objetivos-complementares', 'modelo-logistico', 'perguntas', 'dashboard', 'agradecimentos'];
 
     const slides = ORDER.map(id => document.getElementById(id));
     const dash = document.getElementById('dash');
